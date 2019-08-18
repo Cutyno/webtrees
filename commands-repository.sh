@@ -18,12 +18,11 @@ docker exec -it webtrees /bin/bash
 sudo du -d 2 -h /var/lib/docker/devicemapper | grep 'docker inspect -f "{{.Id}}" webtrees'
 
 
-# DB 
+# DB
 docker exec -it webtrees-database /bin/bash
 mysqldump --all-databases > dump.sql
-mysql -u webtrees -p  
+mysql -u webtrees -p
 
 use webtrees;
 show tables;
 select * from wt_user ;
-

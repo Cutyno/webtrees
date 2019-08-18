@@ -28,7 +28,7 @@ version()
   echo "Build: 2016-10-24"
 }
 
-clean_up() {	
+clean_up() {
 	exit $1
 }
 
@@ -42,7 +42,7 @@ updateComposeFile()
 {
     if  [[ ! -f docker-compose.yml ]]; then
         cp docker-compose.yml docker-compose.yml.old
-    fi    
+    fi
     cp docker-compose-template.yml docker-compose.yml
     sed -i  "s@§§FOLDER@${folder}@g" docker-compose.yml
     sed -i  "s@§§PORT@${port}@g"     docker-compose.yml
@@ -57,28 +57,28 @@ createFolders()
 copyInitFiles()
 {
     if [[ ! -d $folder/webtrees/var/www/html/webtrees/data/config.ini.php ]]; then
-        cp images/webtrees/config/config.ini.php   $folder/webtrees/var/www/html/webtrees/data/config.ini.php 
+        cp images/webtrees/config/config.ini.php   $folder/webtrees/var/www/html/webtrees/data/config.ini.php
     fi
     chown -R www-data:www-data  $folder/webtrees/var/www/html/webtrees/data
 }
 
-checkParameters() 
+checkParameters()
 {
     echo "Setup parameters:"
-    
+
     if [[ "$folder" = "/yourpath/without/slash/at/the/end" ]]; then
         usage
         error_exit "No Data Folder set, use the -f option"
     else
-        echo "Data Folder: $folder" 
+        echo "Data Folder: $folder"
     fi
-    
+
     if [[ -z "$port" ]]; then
         usage
         error_exit "The port is not set."
     else
         echo "Port: $port"
-    fi       
+    fi
 }
 
 

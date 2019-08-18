@@ -3,8 +3,8 @@ dockerized https://github.com/fisharebest/webtrees
 ## Hints
 * approx. time with medium fast internet connection: **5 minutes**
 
-* download from https://github.com/lomadi/app-webtrees
-  * e.g. wget https://github.com/lomadi/app-webtrees/archive/master.zip; unzip master.zip; rm master.zip
+* download from https://github.com/Cutyno/app-webtrees
+  * e.g. wget https://github.com/Cutyno/app-webtrees/archive/master.zip; unzip master.zip; rm master.zip
   * cd app-webtrees-master
 * run **sudo ./install.sh -f  /yourpath/without/slash/at/the/end  -p  portnumber"**
   * -f path to your data folder 
@@ -14,12 +14,12 @@ dockerized https://github.com/fisharebest/webtrees
 * initial user/password: **admin** / **changethepassword**
 
 ## Docker Images Used
- * [lomadi/webtrees](https://hub.docker.com/r/lomadi/webtrees/) webtrees container 
+ * [cutyno/webtrees](https://hub.docker.com/r/cutyno/webtrees/) webtrees container 
  * [mySQL](https://hub.docker.com/_/mysql/), offical mySQL container, use version 5.2.6 for webtrees
  * [busybox](https://hub.docker.com/_/busybox/), offical data container
  
 ## Install Environment Variables
-  *	MYSQL_ROOT_PASSWORD = password, only used within the docker container
+  * MYSQL_ROOT_PASSWORD = password, only used within the docker container
   * MYSQL_DATABASE = name of the mysql database, typical *webtrees*. The DB file is stored in the mounted volume
   * MYSQL_USER = name of the mysql user, typical *webtrees*
   * MYSQL_PASSWORD = mysql user password, only used within the docker container
@@ -32,7 +32,7 @@ dockerized https://github.com/fisharebest/webtrees
 
 ## Installation Instructions 
 
-#### run install.sh 
+#### Run install.sh 
 
 ```
 $sudo ./install.sh -f  /yourpath/without/slash/at/the/end  -p  portnumber
@@ -44,7 +44,7 @@ In the second step the script will generate out of docker-compose-template.yml t
 
 The mysql container is initialzed with a default user for the webtrees appilcation. 
 
-#### startup the docker containers 
+#### Startup the docker containers 
 ```
 $ docker-compose up -d
 $ docker ps 
@@ -52,7 +52,7 @@ $ docker ps
 When docker-compose ist startet the first time, the webtrees database is initialized with default values (stored in _database-dump/dump.sql_.
 
 
-#### start the application
+#### Start the application
 
 * http://localhost:portnumber/webtrees/ (change the port as configured in install.sh)
 * login with 
@@ -62,3 +62,6 @@ When docker-compose ist startet the first time, the webtrees database is initial
    * https://wiki.webtrees.net/en/Administration_pages#Users
    * https://wiki.webtrees.net/en/Novice_User_Guide
    
+## Special thanks
+
+special thanks to Heimo Müller for the base repository. Please check it out [lomadi/app-webtrees](https://github.com/lomadi/app-webtrees)
