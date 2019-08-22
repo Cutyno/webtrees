@@ -1,9 +1,12 @@
 #setting php version
 ARG PHP_VERSION=7.3.8
-LABEL version.php=$PHP_VERSION
 
 #getting base image
 FROM php:$PHP_VERSION-apache
+
+#recover php version
+ARG PHP_VERSION=7.3.8
+LABEL version.php=$PHP_VERSION
 
 #setting webtrees version
 ARG WEBTREES_VERSION=1.7.14
