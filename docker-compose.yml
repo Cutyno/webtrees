@@ -8,7 +8,7 @@ version: '2'
 services:
 
   webtrees:
-    image:  lomadi/webtrees:latest
+    image:  cutyno/webtrees:latest
     container_name:  webtrees
     links:
       - webtrees-database:webtrees-database
@@ -22,8 +22,7 @@ services:
        
   webtrees-database:
     build: 
-        context: ./images/database
-    image: lomadi/webtrees-database
+    image: cutyno/webtrees-database
     container_name:   webtrees-database
     user: root
     environment:
@@ -40,5 +39,5 @@ services:
     image: busybox
     container_name: webtrees-data-volumes
     volumes:
-      - /Users/mue/dockerdata/webtrees/var/lib/mysql:/var/lib/mysql
-      - /Users/mue/dockerdata/webtrees/var/www/html/webtrees/data:/var/www/html/webtrees/data
+      - ./webtrees/var/lib/mysql:/var/lib/mysql
+      - ./webtrees/var/www/html/webtrees/data:/var/www/html/webtrees/data

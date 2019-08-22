@@ -22,8 +22,7 @@ services:
        
   webtrees-database:
     build: 
-        context: ./images/database
-    image: lomadi/webtrees-database
+    image: cutyno/webtrees-database
     container_name:   webtrees-database
     user: root
     environment:
