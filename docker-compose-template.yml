@@ -21,7 +21,6 @@ services:
       - webtrees-data-volumes
        
   webtrees-database:
-    build: 
     image: cutyno/webtrees-database
     container_name:   webtrees-database
     user: root

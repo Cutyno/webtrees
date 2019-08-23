@@ -1,5 +1,5 @@
 #setting mysql version
-ARG MYSQL_VERSION=5.7
+ARG MYSQL_VERSION=8.0
 FROM mysql:$MYSQL_VERSION
 
 #set basis sql dump

@@ -21,7 +21,6 @@ services:
       - webtrees-data-volumes
        
   webtrees-database:
-    build: 
     image: cutyno/webtrees-database
     container_name:   webtrees-database
     user: root
@@ -30,6 +29,7 @@ services:
       - MYSQL_DATABASE=webtrees
       - MYSQL_USER=webtrees
       - MYSQL_PASSWORD=mustnotchange
+    command: --default-authentication-plugin=mysql_native_password
     volumes_from: 
       - webtrees-data-volumes
     depends_on:
