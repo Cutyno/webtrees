@@ -18,7 +18,7 @@ dockerized https://github.com/fisharebest/webtrees
 
 ## Docker Images Used
  * [cutyno/webtrees](https://hub.docker.com/r/cutyno/webtrees/) webtrees container 
- * [cutyno/webtrees-database](https://hub.docker.com/r/cutyno/webtrees-databse/) preconfigured database container, or the offical mySQL container [mySQL](https://hub.docker.com/_/mysql/)
+ * [cutyno/webtrees-database](https://hub.docker.com/r/cutyno/webtrees-database/) preconfigured database container, or the offical mySQL container [mySQL](https://hub.docker.com/_/mysql/)
  * [busybox](https://hub.docker.com/_/busybox/), offical data container
  
 ## Install Environment Variables
