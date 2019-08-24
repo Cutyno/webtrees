@@ -1,21 +1,24 @@
-# WEBTREES application
-dockerized https://github.com/fisharebest/webtrees 
-## Hints
-* approx. time with medium fast internet connection: **5 minutes**
+# ![webtrees - online collaborative genealogy](https://www.webtrees.net/templates/webtrees/images/webtrees.jpg) dockerized server
 
+dockerized https://github.com/fisharebest/webtrees
+
+[![DockerHub Badge](https://dockeri.co/image/cutyno/webtrees)](https://hub.docker.com/r/cutyno/webtrees)
+[![DockerHub Badge](https://dockeri.co/image/cutyno/webtrees-database)](https://hub.docker.com/r/cutyno/webtrees-database/)
+
+## Installation
 * download from https://github.com/Cutyno/app-webtrees
   * e.g. wget https://github.com/Cutyno/app-webtrees/archive/master.zip; unzip master.zip; rm master.zip
   * cd app-webtrees-master
 * run **sudo ./install.sh -f  /yourpath/without/slash/at/the/end  -p  portnumber"**
   * -f path to your data folder 
-  * -p port for the webtrees container
+  * -p free port for the webtrees container
 * run **docker-compose  up  -d** 
 * open http://localhost:10080/webtrees/ in your browser (change the port, as specified in install.sh)
 * initial user/password: **admin** / **changethepassword**
 
 ## Docker Images Used
  * [cutyno/webtrees](https://hub.docker.com/r/cutyno/webtrees/) webtrees container 
- * [mySQL](https://hub.docker.com/_/mysql/), offical mySQL container, use version 5.2.6 for webtrees
+ * [cutyno/webtrees-database](https://hub.docker.com/r/cutyno/webtrees-databse/) preconfigured database container, or the offical mySQL container [mySQL](https://hub.docker.com/_/mysql/)
  * [busybox](https://hub.docker.com/_/busybox/), offical data container
  
 ## Install Environment Variables
@@ -49,7 +52,6 @@ The mysql container is initialzed with a default user for the webtrees appilcati
 $ docker-compose up -d
 $ docker ps 
 ```
-When docker-compose ist startet the first time, the webtrees database is initialized with default values (stored in _database-dump/dump.sql_.
 
 
 #### Start the application
